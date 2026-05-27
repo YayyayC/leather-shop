@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>주문 안내 — 고요공방</title>
+<meta name="description" content="고요공방 주문 절차와 입금 안내." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="topbar">한 땀씩 손바느질 · 식물성 무두질 가죽 · 전국 택배 배송</div>
+
+<header class="site">
+  <div class="nav">
+    <a href="index.html" class="logo"><span class="logo-mark"></span><span>고요공방</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="메뉴">☰</button>
+    <nav class="menu" id="menu">
+      <a href="index.html">홈</a>
+      <a href="products.html">제품</a>
+      <a href="about.html">공방 이야기</a>
+      <a href="order.html" class="active">주문 안내</a>
+      <a href="contact.html">연락처</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="eyebrow">ORDER</div>
+    <h1>주문하기</h1>
+    <p>주문서를 작성하시면 아래에 내용이 정리됩니다. 복사하셔서 카카오톡으로 보내주시면 입금 안내를 드립니다.</p>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="order-grid">
+        <div class="bank-box">
+          <h3>입금 계좌 안내</h3>
+          <div class="bank-row"><span class="k">은행</span><span class="v">OO은행</span></div>
+          <div class="bank-row"><span class="k">계좌번호</span><span class="v">000-0000-0000-00</span></div>
+          <div class="bank-row"><span class="k">예금주</span><span class="v">고요공방</span></div>
+          <p class="note">
+            · 주문서 전송 후 24시간 이내 입금 부탁드립니다.<br/>
+            · 입금자명은 주문자 성함과 동일하게 부탁드려요.<br/>
+            · 입금 확인 후 평일 기준 3~7일 안에 제작이 시작됩니다.<br/>
+            · 단순 변심 환불은 어렵습니다 (주문 제작 상품).
+          </p>
+
+          <h3 style="margin-top: 30px;">주문 절차</h3>
+          <ol style="padding-left: 20px; margin: 0; color: var(--ink-soft); font-size: 14px; line-height: 1.9;">
+            <li>오른쪽 주문서를 작성합니다.</li>
+            <li>"주문서 복사하기" 버튼을 누릅니다.</li>
+            <li>카카오톡 채널로 붙여 넣어 보냅니다.</li>
+            <li>안내받은 계좌로 입금합니다.</li>
+            <li>입금 확인 후 제작이 시작됩니다.</li>
+          </ol>
+        </div>
+
+        <form class="order-form" id="orderForm" onsubmit="return false;">
+          <div class="field">
+            <label for="productSel">제품 선택</label>
+            <select id="productSel"></select>
+          </div>
+          <div class="field">
+            <label for="qty">수량</label>
+            <input id="qty" type="number" min="1" value="1" />
+          </div>
+          <div class="field">
+            <label for="name">주문자 성함</label>
+            <input id="name" type="text" placeholder="홍길동" />
+          </div>
+          <div class="field">
+            <label for="phone">연락처</label>
+            <input id="phone" type="text" placeholder="010-0000-0000" />
+          </div>
+          <div class="field">
+            <label for="addr">배송지 주소</label>
+            <textarea id="addr" placeholder="우편번호 / 도로명 주소 / 상세 주소"></textarea>
+          </div>
+          <div class="field">
+            <label for="memo">요청사항 (선택)</label>
+            <textarea id="memo" placeholder="각인, 색상 요청 등"></textarea>
+          </div>
+
+          <div class="summary serif" id="summary">주문 내용이 여기에 정리됩니다.</div>
+
+          <div class="cta-row" style="margin-top: 6px;">
+            <button class="btn btn-primary" id="copyBtn" type="button">주문서 복사하기</button>
+            <a class="btn btn-ghost" href="contact.html">카카오톡 채널로 가기</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="row">
+    <div>
+      <h4>고요공방</h4>
+      <p>한 땀씩 손으로 박아 작은 가죽 소품을 만듭니다.<br/>주문 제작 / 평생 수선</p>
+      <p style="margin-top:14px;">사업자등록번호 000-00-00000</p>
+    </div>
+    <div>
+      <h4>연락처</h4>
+      <p>전화 010-0000-0000</p>
+      <p>이메일 goyo@example.com</p>
+      <p>운영시간 화–토 11:00–18:00</p>
+    </div>
+    <div>
+      <h4>채널</h4>
+      <p><a href="contact.html">카카오톡 채널 @goyo</a></p>
+      <p><a href="contact.html">인스타그램 @goyo.leather</a></p>
+    </div>
+  </div>
+  <div class="copyright">© 2026 GOYO LEATHER WORKSHOP. ALL RIGHTS RESERVED.</div>
+</footer>
+
+<div class="toast" id="toast">주문서가 복사되었어요</div>
+
+<script src="products.js"></script>
+<script>
+  // 주문서 옵션 채우기
+  const sel = document.getElementById('productSel');
+  sel.innerHTML = PRODUCTS.map(p =>
+    `<option value="${p.id}">${p.name} — ${p.price.toLocaleString()}원</option>`
+  ).join('');
+
+  // URL 쿼리 파라미터로 제품 선택 (products 페이지에서 넘어올 때 사용 가능)
+  const params = new URLSearchParams(location.search);
+  const pid = params.get('product');
+  if (pid && PRODUCTS.find(x => x.id === pid)) sel.value = pid;
+
+  // 주문 요약 실시간 업데이트
+  const fields = ['productSel','qty','name','phone','addr','memo'];
+  const summary = document.getElementById('summary');
+  function updateSummary() {
+    const p = PRODUCTS.find(x => x.id === sel.value);
+    const qty = Math.max(1, parseInt(document.getElementById('qty').value) || 1);
+    const total = p ? p.price * qty : 0;
+    const lines = [
+      '[고요공방 주문서]',
+      `· 제품: ${p ? p.name : ''} × ${qty}개`,
+      `· 합계: ${total.toLocaleString()}원`,
+      `· 주문자: ${document.getElementById('name').value || ''}`,
+      `· 연락처: ${document.getElementById('phone').value || ''}`,
+      `· 배송지: ${document.getElementById('addr').value || ''}`,
+    ];
+    const memo = document.getElementById('memo').value;
+    if (memo) lines.push(`· 요청: ${memo}`);
+    summary.textContent = lines.join('\n');
+  }
+  fields.forEach(id => {
+    document.getElementById(id).addEventListener('input', updateSummary);
+    document.getElementById(id).addEventListener('change', updateSummary);
+  });
+  updateSummary();
+
+  // 복사 버튼
+  const toast = document.getElementById('toast');
+  document.getElementById('copyBtn').addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(summary.textContent);
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 1800);
+    } catch (e) {
+      const ta = document.createElement('textarea');
+      ta.value = summary.textContent;
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); toast.classList.add('show'); setTimeout(()=>toast.classList.remove('show'),1800); }
+      catch(_) { alert('복사가 안 되네요. 직접 선택해서 복사해 주세요.'); }
+      document.body.removeChild(ta);
+    }
+  });
+
+  document.getElementById('menuToggle')?.addEventListener('click', () => {
+    document.getElementById('menu')?.classList.toggle('open');
+  });
+</script>
+</body>
+</html>
